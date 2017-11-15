@@ -18,9 +18,17 @@ router.get("/SelLoginIDDupeCheck", (req, res, next) => {
     }).then((result) => {
 
     if (result.length === 0) {
-      res.send("1");
+        const Result = {
+            result : "1"
+        };
+        const Result_json = JSON.stringify(Result);
+        res.send(Result_json);
     } else {
-      res.send("0");
+        const Result = {
+            result : "0"
+        };
+        const Result_json = JSON.stringify(Result);
+        res.send(Result_json);
     }
 
   });
