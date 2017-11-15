@@ -18,9 +18,9 @@ router.get("/SelLoginIDDupeCheck", (req, res, next) => {
     }).then((result) => {
 
     if (result.length === 0) {
-      res.send(true);
+      res.send("1");
     } else {
-      res.send(false);
+      res.send("0");
     }
 
   });
