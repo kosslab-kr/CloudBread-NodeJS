@@ -11,7 +11,7 @@ router.get("/get", (req, res, next) => {
 
 /*SelLoginIDDupeCheck Implementation*/
 router.get("/SelLoginIDDupeCheck", (req, res, next) => {
-    const FindID = String(req.query.memberID);
+    const FindID = String(req.query.MemberID);
 
     models.Member.findAll({
       where: {MemberID: FindID}
