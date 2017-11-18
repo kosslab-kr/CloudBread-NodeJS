@@ -4,6 +4,7 @@
     "password": "@antjs3671",
     "database": "tt",
     "host": "127.0.0.1",
+    "timezone": "+09:00",
     "port": 3306,
     "dialect": "mysql",
     "pool" : {
