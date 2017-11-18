@@ -79,4 +79,5 @@ sequelize.Sequelize.Promise.all([
 	db.Notices.sync(),
 	db.ServerInfo.sync(),
 	db.StatData.sync()
+	
 	])
