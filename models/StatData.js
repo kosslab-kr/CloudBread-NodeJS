@@ -1,7 +1,7 @@
-const path = require("path");
-const Sequelize = require("sequelize");
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/sequelize.json")[env];
+const path = require('path');
+const Sequelize = require('sequelize');
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/sequelize.json')[env];
 const sequelize = new Sequelize(
   config.database,
   config.username,
@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
 
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "StatData",
+    'StatData',
     {
       StatID: {
         type: Sequelize.STRING(50),
@@ -33,37 +33,37 @@ module.exports = (sequelize, DataTypes) => {
       sCol1: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol2: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol3: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol4: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol5: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       DataFromRegion: {
         type: Sequelize.STRING(64),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       DataFromRegionDT: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: sequelize.fn("NOW")
+        defaultValue: sequelize.fn('NOW')
       }
     },
     {

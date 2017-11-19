@@ -6,7 +6,7 @@ const controllers = require('../controllers');
 const cbPing = require('../controllers/CBPingController');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.send('hello CloudBread');
 });
 

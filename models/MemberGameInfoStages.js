@@ -1,7 +1,7 @@
-const path = require("path");
-const Sequelize = require("sequelize");
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/sequelize.json")[env];
+const path = require('path');
+const Sequelize = require('sequelize');
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/sequelize.json')[env];
 const sequelize = new Sequelize(
   config.database,
   config.username,
@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
 
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "MemberGameInfoStages",
+    'MemberGameInfoStages',
     {
       MemberGameInfoStagesID: {
         type: Sequelize.STRING(128),
@@ -21,157 +21,157 @@ module.exports = (sequelize, DataTypes) => {
       MemberID: {
         type: Sequelize.STRING(256),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageName: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageStatus: {
         type: Sequelize.STRING(40),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Category1: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Category2: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Category3: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Mission1: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Mission2: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Mission3: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Mission4: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Mission5: {
         type: Sequelize.STRING(80),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Points: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageStat1: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageStat2: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageStat3: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageStat4: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       StageStat5: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol1: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol2: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol3: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol4: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol5: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol6: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol7: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol8: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol9: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol10: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       HideYN: {
         type: Sequelize.STRING(1),
         allowNull: false,
-        defaultValue: "N"
+        defaultValue: 'N'
       },
       DeleteYN: {
         type: Sequelize.STRING(1),
         allowNull: false,
-        defaultValue: "N"
+        defaultValue: 'N'
       },
       DataFromRegion: {
         type: Sequelize.STRING(64),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       DataFromRegionDT: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: sequelize.fn("NOW")
+        defaultValue: sequelize.fn('NOW')
       }
     },
     {

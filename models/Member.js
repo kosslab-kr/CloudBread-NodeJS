@@ -1,7 +1,7 @@
-const path = require("path");
-const Sequelize = require("sequelize");
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/sequelize.json")[env];
+const path = require('path');
+const Sequelize = require('sequelize');
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/sequelize.json')[env];
 const sequelize = new Sequelize(
   config.database,
   config.username,
@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
 
 module.exports = function(sequelize, DataTypes) {
   const Member = sequelize.define(
-    "Member",
+    'Member',
     {
       MemberID: {
         type: Sequelize.STRING(256),
@@ -21,207 +21,207 @@ module.exports = function(sequelize, DataTypes) {
       MemberPWD: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       EmailAddress: {
         type: Sequelize.STRING(450),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       EmailConfirmedYN: {
         type: Sequelize.STRING(40),
         allowNull: false,
-        defaultValue: "N"
+        defaultValue: 'N'
       },
       PhoneNumber1: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       PhoneNumber2: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       PINumber: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Name1: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Name2: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       Name3: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       DOB: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       RecommenderID: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       MemberGroup: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       LastDeviceID: {
         type: Sequelize.STRING(128),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       LastIPaddress: {
         type: Sequelize.STRING(128),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       LastLoginDT: {
         type: Sequelize.STRING(64),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       LastLogoutDT: {
         type: Sequelize.STRING(64),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       LastMACAddress: {
         type: Sequelize.STRING(128),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       AccountBlockYN: {
         type: Sequelize.STRING(40),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       AccountBlockEndDT: {
         type: Sequelize.STRING(64),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       AnonymousYN: {
         type: Sequelize.STRING(40),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       ThirdAuthProvider: {
         type: Sequelize.STRING(128),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       ThirdAuthID: {
         type: Sequelize.STRING(256),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       ThirdAuthParam: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       PushNotificationID: {
         type: Sequelize.STRING(512),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       PushNotificationProvider: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       PushNotificationGroup: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol1: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol2: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol3: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol4: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol5: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol6: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol7: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol8: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol9: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       sCol10: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       TimeZoneID: {
         type: Sequelize.STRING(40),
         allowNull: false,
-        defaultValue: "2100"
+        defaultValue: '2100'
       },
       HideYN: {
         type: Sequelize.STRING(1),
         allowNull: false,
-        defaultValue: "N"
+        defaultValue: 'N'
       },
       DeleteYN: {
         type: Sequelize.STRING(1),
         allowNull: false,
-        defaultValue: "N"
+        defaultValue: 'N'
       },
       DataFromRegion: {
         type: Sequelize.STRING(64),
         allowNull: false,
-        defaultValue: ""
+        defaultValue: ''
       },
       DataFromRegionDT: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: sequelize.fn("NOW")
+        defaultValue: sequelize.fn('NOW')
       }
     },
     {
