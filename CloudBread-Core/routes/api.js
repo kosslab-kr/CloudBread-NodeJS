@@ -17,7 +17,6 @@ router.post('/CBAddMemberItemPurchase', controllers.CBAddMemberItemPurchaseContr
 
 router.post('/CBAddUseMemberItem', controllers.CBAddUseMemberItemController.Post);
 
-router.post('/CBCOMUdtMember', controllers.CBCOMUdtMemberController.Post);
 
 
 module.exports = router;
