@@ -5,7 +5,8 @@
   "scripts": {
     "start": "NODE_ENV=production node ./bin/www",
     "start:development": "NODE_ENV=development node ./bin/www",
-    "eslint": "eslint **/*.js"
+    "eslint": "eslint **/*.js",
+    "eslint:fix": "eslint -c .eslintrc --fix **/*.js"
   },
   "dependencies": {
     "azure-mobile-apps": "^4.0.1",
