@@ -13,6 +13,7 @@ let login = require("./routes/login");
 let pushalarm = require("./routes/pushalarm");
 let signin = require('./routes/signin');
 let tableprocedure = require("./routes/tableprocedure");
+let api =require("./routes/api")
 
 let app = express();
 
@@ -36,6 +37,7 @@ app.use("/login", login);
 app.use("/alarm", pushalarm);
 app.use("/sign", signin);
 app.use("/table", tableprocedure);
+app.use("/api", api)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

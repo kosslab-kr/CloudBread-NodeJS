@@ -1,3 +1,4 @@
-exports.CBPing = (req, res) => {
-        res.send("Hello");
+
+exports.Get = (req, res) => {
+        res.send("Hello CloudBread!");
 };
