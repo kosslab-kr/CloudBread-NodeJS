@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-let controllers = require('../controllers');
-let cbPing = require('../controllers/CBPingController')
+const controllers = require('../controllers');
+const cbPing = require('../controllers/CBPingController')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
