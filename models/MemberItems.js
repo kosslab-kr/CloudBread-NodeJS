@@ -106,7 +106,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     DataFromRegionDT: {
       type: Sequelize.DATE,
       allowNull: false,
-      defaultValue: sequelize.fn('NOW'),
+      defaultValue: sequelize.fn('GETDATE'),
     },
   },
   {
