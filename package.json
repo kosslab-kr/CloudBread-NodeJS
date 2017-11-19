@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "eslint": "eslint **/*.js"
   },
   "dependencies": {
     "azure-mobile-apps": "^4.0.1",
@@ -21,6 +22,11 @@
     "sequelize-import": "^1.2.1",
     "serve-favicon": "~2.4.5",
     "tedious": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.8.0"
   },
   "description": "CloudBread for NodeJS",
   "main": "app.js",
