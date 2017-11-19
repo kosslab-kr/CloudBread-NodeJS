@@ -22,7 +22,7 @@
     "sequelize": "^4.19.0",
     "sequelize-import": "^1.2.1",
     "serve-favicon": "~2.4.5",
-    "tedious": "^2.0.1"
+    "tedious": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
