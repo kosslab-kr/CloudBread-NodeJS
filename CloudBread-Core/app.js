@@ -14,6 +14,7 @@ let login = require("./routes/login");
 let pushalarm = require("./routes/pushalarm");
 let signin = require('./routes/signin');
 let tableprocedure = require("./routes/tableprocedure");
+let api =require("./routes/api")
 
 let app = express();
 //hompage : true => instance of Azure-Mobile-Apps for hompage
@@ -39,6 +40,7 @@ app.use("/login", login);
 app.use("/alarm", pushalarm);
 app.use("/sign", signin);
 app.use("/table", tableprocedure);
+app.use("/api", api)
 
 //Azure Mobile Apps Initialization
 //Define a table
