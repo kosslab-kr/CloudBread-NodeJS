@@ -222,13 +222,8 @@ module.exports = function (sequelize, DataTypes) {
       DataFromRegionDT: {
         type: Sequelize.DATE,
         allowNull: false,
-<<<<<<< HEAD
-        defaultValue: sequelize.fn('NOW'),
-      },
-=======
         defaultValue: sequelize.fn('GETDATE')
       }
->>>>>>> 7e4d88fcbbf759c9bd017b9f3312d0455e0ce8b9
     },
     {
       freezeTableName: true,
