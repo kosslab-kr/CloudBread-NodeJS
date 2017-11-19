@@ -4,6 +4,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+let azureMobileApps = require('azure-mobile-apps');
 
 //require router
 let administrator = require("./routes/administrator");
@@ -13,8 +14,11 @@ let login = require("./routes/login");
 let pushalarm = require("./routes/pushalarm");
 let signin = require('./routes/signin');
 let tableprocedure = require("./routes/tableprocedure");
+let api =require("./routes/api")
 
 let app = express();
+//hompage : true => instance of Azure-Mobile-Apps for hompage
+let mobile = azureMobileApps({homePage:true});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,6 +40,13 @@ app.use("/login", login);
 app.use("/alarm", pushalarm);
 app.use("/sign", signin);
 app.use("/table", tableprocedure);
+app.use("/api", api)
+
+//Azure Mobile Apps Initialization
+//Define a table
+mobile.tables.add('index');
+// Add the mobile API so it is accessible as a Web API
+app.use(mobile);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
