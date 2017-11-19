@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "NODE_ENV=production node ./bin/www",
+    "start:development": "NODE_ENV=development node ./bin/www",
     "eslint": "eslint **/*.js"
   },
   "dependencies": {
