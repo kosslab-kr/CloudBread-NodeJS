@@ -147,8 +147,8 @@ const db = require('./models');
 		db.MemberAccountBlockLog.sync(),
 		db.MemberItemPurchase.sync(),  
 		db.MemberItems.sync(),
-		db.GiftDepository.sync(),
 		db.GameEvents.sync(),
+		db.GiftDepository.sync(),
 		db.GameEventMember.sync(),  
 		db.Coupon.sync(), // 2
 		db.CouponMember.sync(),
