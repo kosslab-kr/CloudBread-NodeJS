@@ -1,1 +1,44 @@
-{"development":{"username":"jung1","password":"1234","database":"Test","host":"127.0.0.1","timezone":"+09:00","port":1433,"dialect":"mssql","pool":{"max":5,"min":0,"idle":10000}},"test":{"username":"jung1","password":"1234","database":"Test","host":"127.0.0.1","timezone":"+09:00","port":1433,"dialect":"mssql","pool":{"max":5,"min":0,"idle":10000}},"production":{"username":"jung1","password":"1234","database":"Test","host":"127.0.0.1","timezone":"+09:00","port":1433,"dialect":"mssql","pool":{"max":5,"min":0,"idle":10000}}}
+{
+  "development": {
+    "username": "jung1",
+    "password": "1234",
+    "database": "Test",
+    "host": "127.0.0.1",
+    "timezone": "+09:00",
+    "port": 1433,
+    "dialect": "mssql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
+  },
+  "test": {
+    "username": "jung1",
+    "password": "1234",
+    "database": "Test",
+    "host": "127.0.0.1",
+    "timezone": "+09:00",
+    "port": 1433,
+    "dialect": "mssql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
+  },
+  "production": {
+    "username": "jung1",
+    "password": "1234",
+    "database": "Test",
+    "host": "127.0.0.1",
+    "timezone": "+09:00",
+    "port": 1433,
+    "dialect": "mssql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
+  }
+}

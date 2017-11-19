@@ -8,5 +8,5 @@
 */
 
 exports.Post = (req, res) => {
-        
+
 };

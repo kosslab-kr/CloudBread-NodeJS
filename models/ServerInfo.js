@@ -1,12 +1,13 @@
 const path = require('path');
 const Sequelize = require('sequelize');
+
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/sequelize.json')[env];
+const config = require(`${__dirname}/../config/sequelize.json`)[env];
 const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  config,
 );
 
 module.exports = (sequelize, DataTypes) => {
@@ -74,8 +75,33 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: sequelize.fn('GETDATE')
       }
     },
-    {
-      freezeTableName: true
-    }
-  );
-};
+    sCol3: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: '',
+    },
+    sCol4: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: '',
+    },
+    sCol5: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: '',
+    },
+    DataFromRegion: {
+      type: Sequelize.STRING(64),
+      allowNull: false,
+      defaultValue: '',
+    },
+    DataFromRegionDT: {
+      type: Sequelize.DATE,
+      allowNull: false,
+      defaultValue: sequelize.fn('NOW'),
+    },
+  },
+  {
+    freezeTableName: true,
+  },
+);
