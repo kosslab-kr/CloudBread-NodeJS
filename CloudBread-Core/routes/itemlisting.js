@@ -104,70 +104,72 @@ router.post("/ItemPurchase", (req, res, next) => {
         }
     }).then((result) => {
         target_item = result;
+        
+        let totalResult;
+        if (!target_item) {
+            //item isn't present. -> insert to inventory & make purchase log
+            models.MemberItems.create({
+                MemberID: target_member_id,
+                ItemListID: target_item_id,
+                ItemCount: target_quantity,
+                DataFromRegion: target_region,
+                DataFromRegionDT: new Date()
+            }).then((result) => {
+                totalResult.miResult = result;
+            });
+
+            models.MemberItemPurchase.create({
+                MemberID: target_member_id,
+                ItemListID: target_item_id,
+                PurchasePrice: target_price,
+                PurchaseQuantity: target_quantity,
+                PurchaseDeviceID: target_deviceID,
+                PurchaseDeviceIPAddress: target_IP,
+                PurchaseDeviceMACAddress: target_MAC,
+                PurchaseDT: new Date(),
+                PurchaseCancelConfirmAdminMemberID: 'Not Canceled',
+                DataFromRegion: target_region,
+                DataFromRegionDT: new Date()
+            }).then((result) => {
+                totalResult.mpResult = result;
+            });
+
+        } else {
+            //item is present. -> update inventory
+            models.MemberItems.update({
+                ItemCount: String(parseInt(target_item.ItemCount) + parseInt(target_quantity)),
+                DataFromRegion: target_region,
+                DataFromRegionDT: new Date(),
+                where: {
+                    MemberID: target_member_id,
+                    ItemListID: target_item_id
+                }
+            }).then((result) => {
+                totalResult.miResult = result;
+            });
+
+            //to maintain purchase log, make new purchase log.
+            models.MemberItemPurchase.create({
+                MemberID: target_member_id,
+                ItemListID: target_item_id,
+                PurchasePrice: target_price,
+                PurchaseQuantity: target_quantity,
+                PurchaseDeviceID: target_deviceID,
+                PurchaseDeviceIPAddress: target_IP,
+                PurchaseDeviceMACAddress: target_MAC,
+                PurchaseDT: new Date(),
+                PurchaseCancelConfirmAdminMemberID: 'Not Canceled',
+                DataFromRegion: target_region,
+                DataFromRegionDT: new Date()
+            }).then((result) => {
+                totalResult.mpResult = result;
+            });
+
+        }
+        res.end();
+
     });
 
-    let totalResult;
-    if (target_item === null) {
-        //item isn't present. -> insert to inventory & make purchase log
-        models.MemberItems.create({
-            MemberID: target_member_id,
-            ItemListID: target_item_id,
-            ItemCount: target_quantity,
-            DataFromRegion: target_region,
-            DataFromRegionDT: new Date()
-        }).then((result) => {
-            totalResult.miResult = result;
-        });
-
-        models.MemberItemPurchase.create({
-            MemberID: target_member_id,
-            ItemListID: target_item_id,
-            PurchasePrice: target_price,
-            PurchaseQuantity: target_quantity,
-            PurchaseDeviceID: target_deviceID,
-            PurchaseDeviceIPAddress: target_IP,
-            PurchaseDeviceMACAddress: target_MAC,
-            PurchaseDT: new Date(),
-            PurchaseCancelConfirmAdminMemberID: 'Not Canceled',
-            DataFromRegion: target_region,
-            DataFromRegionDT: new Date()
-        }).then((result) => {
-            totalResult.mpResult = result;
-        });
-
-    } else {
-        //item is present. -> update inventory
-        models.MemberItems.update({
-            ItemCount: String(parseInt(target_item.ItemCount) + parseInt(target_quantity)),
-            DataFromRegion: target_region,
-            DataFromRegionDT: new Date(),
-            where: {
-                MemberID: target_member_id,
-                ItemListID: target_item_id
-            }
-        }).then((result) => {
-            totalResult.miResult = result;
-        });
-
-        //to maintain purchase log, make new purchase log.
-        models.MemberItemPurchase.create({
-            MemberID: target_member_id,
-            ItemListID: target_item_id,
-            PurchasePrice: target_price,
-            PurchaseQuantity: target_quantity,
-            PurchaseDeviceID: target_deviceID,
-            PurchaseDeviceIPAddress: target_IP,
-            PurchaseDeviceMACAddress: target_MAC,
-            PurchaseDT: new Date(),
-            PurchaseCancelConfirmAdminMemberID: 'Not Canceled',
-            DataFromRegion: target_region,
-            DataFromRegionDT: new Date()
-        }).then((result) => {
-            totalResult.mpResult = result;
-        });
-
-    }
-    res.end();
 });
 
 /****************************************/
